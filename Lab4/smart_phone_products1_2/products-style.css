@@ -1,0 +1,170 @@
+ /* General */
+ 
+
+ html {
+  
+    font-family: 'Raleway', sans-serif;
+    background-color: yellow;
+    font-size: 10px;
+    
+  }
+  
+  body {
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Typography */
+  
+  
+  h1, h2 {
+    
+    font-family: 'Cherry Swash', cursive;
+    margin: 0;
+    
+    text-align: center;
+  }
+  
+  
+  h1 {
+    font-size: 5rem;
+    background-size: 48px 48px;
+    background-blend-mode: lighten;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: yellow;
+    text-align: right;
+    width: 160px;
+    position: absolute;
+    right: 4%;
+    z-index: 3000;
+    text-shadow: 2px 2px 1px black;
+    line-height: 2rem;
+    padding-top: 0.3rem;
+  }
+  
+  p {
+    font-size: 1.5rem;
+  }
+  
+  
+  /* block styling */
+  
+  
+  header, aside, main, footer {
+    padding: 20px;
+  }
+  
+  header {
+    border: 5px solid black;
+    border-bottom: 0;
+  }
+  
+  aside {
+    border-right: 5px solid black;
+  }
+  
+  
+  body > div {
+    border: 5px solid black;
+    display: flex;
+  }
+  
+  
+  footer {
+    border: 5px solid black;
+    border-top: 0;
+  }
+  
+  footer h1 {
+    font-style: italic;
+    font-size: 3rem;
+  }
+  
+  aside {
+    flex: 3;
+  }
+  
+  main {
+    flex: 7;
+  }
+  
+  
+  /*  Form styling */
+  
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  
+  
+  aside {
+    display: flex;
+    align-items: stretch;
+    background: url(images/phone_globe.jpg) no-repeat 50% center;
+    padding: 50px 0;
+  }
+  
+  aside div {
+    margin-bottom: 20px;
+  }
+  
+  
+  /* Styling the products */
+  
+  
+  section {
+    width: 45%;
+    margin: 5px;
+    background-color: black;
+    position: relative;
+    height: 215px;
+  }
+  
+  section p {
+    color: yellow;
+    background: black;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px yellow;
+    position: absolute;
+    right: 10px;
+    bottom: -6px;
+    z-index: 2000;
+  }
+  
+  
+  .item {
+    background-size: 234px 24px;
+  }
+  
+  
+  .item img {
+      width: 200px;
+      height: 200px; 
+      
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      
+  }
+  
+  .rotate img
+  {
+    animation: rotation .3s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
