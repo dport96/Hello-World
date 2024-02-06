@@ -13,8 +13,8 @@
     <style id='localStyle'></style>
     <script>
         const store_name = "Dan";
-        let hits = 1;
-smart_phone_products1_2        spins = 2;
+        let hits = 0;
+        let spins = 0;
     </script>
 </head>
 
@@ -23,6 +23,7 @@ smart_phone_products1_2        spins = 2;
     <header>
         <h1><span id="name_span"></span>'s Used Smart Phone Store</h1>
         <script>name_span.innerHTML = "Armando";</script>
+        <h1>Hits:<span id="hit_span">0</span> Spins:<span id="spin_span">0</span><p>Hit/Spin:<span id="hit_spin_span">0</span></p></h1>
     </header>
     <div>
         <aside>
@@ -38,7 +39,15 @@ smart_phone_products1_2        spins = 2;
         </aside>
 
         <main>
-            <section class="item" onmouseover="this.className='item rotate';" onclick="this.className='item';">
+            <section class="item" 
+            onmouseover="
+                this.className='item rotate';
+                spin_span.innerHTML = ++spins;
+                " 
+                
+            onclick="
+                this.className='item';
+                hit_span.innerHTML = ++hits;">
                 <h2>HTC</h2>
                 <p>$40.00</p>
                 <img id="HTC_img" src="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg">
