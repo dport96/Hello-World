@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    quantity desired1: <input id="quantity_textbox1" type="text" onkeyup="checkQuantityTextbox(this);">
+    <span id='quantity_textbox1_message'>Enter a quantity</span>
+    <br>
+    quantity desired2: <input id="quantity_textbox2" type="text" onkeyup="checkQuantityTextbox(this);">
+    <span id='quantity_textbox2_message'>Enter a quantity</span>
+</body>
+
+</html>
+<script>
+    function checkQuantityTextbox(the_textbox) {
+        document.getElementById(the_textbox.id + '_message').innerHTML = isNonNegInt(the_textbox.value).join(',');
+
+    }
+
+    function isNonNegInt(q) {
+        let errors = []; // assume no errors at first
+        if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
+        else {
+            if (q < 0) errors.push('Negative value!'); // Check if it is non-negative
+            if (parseInt(q) != q) errors.push('Not an integer!'); // Check that it is an integer
+        }
+
+        return errors;
+    }
+
+</script>
