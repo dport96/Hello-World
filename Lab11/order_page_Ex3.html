@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let params = (new URL(document.location)).searchParams;
+
+        if(params.has('quantity_textbox1')) { 
+            document.write(`Thank for you for ordering ${params.get('quantity_textbox1')} things!`);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="quantity_form" action="" method="GET">
+         quantity desired1: <input name="quantity_textbox1" type="text" onkeyup="checkQuantityTextbox(this);">
+        <span id='quantity_textbox1_message'>Enter a quantity</span>
+        <br>
+        <input type="submit" value="Purchase">
+    </form>
+</body>
+
+</html>
+<script>
+    function checkQuantityTextbox(the_textbox) {
+        document.getElementById(the_textbox.id + '_message').innerHTML = isNonNegInt(the_textbox.value, true).join(',');
+
+    }
+
+    function isNonNegInt(q, return_error = false) {
+        let errors = []; // assume no errors at first
+        if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
+        else {
+            if (q < 0) errors.push('Negative value!'); // Check if it is non-negative
+            if (parseInt(q) != q) errors.push('Not an integer!'); // Check that it is an integer
+        }
+
+        return (return_error)?errors:(errors.length === 0);
+    }
+
+function displayPurchase() {
+    if(isNonNegInt(quantity_textbox1.value)) { 
+        document.body.innerHTML = `Thank for you for ordering ${quantity_textbox1.value} things!`;
+    }
+}
+</script>
