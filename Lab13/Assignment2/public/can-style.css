@@ -1,0 +1,175 @@
+html {
+  font-family: 'Raleway', sans-serif;
+  background-color: yellow;
+  font-size: 10px;
+}
+
+body {
+  width:800px;
+  margin:0 auto;
+  }
+
+  h1,h2 {
+  font-family:'Cherry Swash', cursive;
+  text-align:center;
+  margin:0;
+  }
+
+  h1 {
+  font-size:5rem;
+  }
+
+  h2 {
+  font-size:2rem;
+  color:#FF0;
+  text-align:right;
+  width:160px;
+  position:absolute;
+  right:4%;
+  z-index:3000;
+  text-shadow:2px 2px 1px #000;
+  line-height:2rem;
+  padding-top:.3rem;
+  }
+
+  .error_message {
+  color: #fffb00;
+  }
+
+  p,label,input,select,button,li {
+  font-size:1.5rem;
+  }
+
+  li {
+  line-height:1.5;
+  }
+
+  header,aside,main,footer {
+  padding:20px;
+  }
+
+  header {
+  border:5px solid #000;
+  border-bottom:0;
+  }
+
+  aside {
+  border-right:5px solid #000;
+  flex:3;
+  display:flex;
+  flex-flow:column;
+  align-items:stretch;
+  }
+
+  body > div {
+  border:5px solid #000;
+  display:flex;
+  }
+
+  footer {
+  border:5px solid #000;
+  border-top:0;
+  }
+
+  main {
+  flex:7;
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  }
+
+  aside div {
+  margin-bottom:20px;
+  }
+
+  label,select,input {
+  display:block;
+  }
+
+  label {
+  margin-bottom:5px;
+  }
+
+  select,input,button {
+  width:100%;
+  }
+
+  input {
+  background:#000;
+  box-shadow:inset 1px 1px 1px #FFF;
+  color:#FF0;
+  border:none;
+  width:201.5px;
+  padding:5px;
+  }
+
+  button {
+  background:#000;
+  color:#FF0;
+  border:none;
+  border-radius:10px;
+  box-shadow:inset 1px 1px 2px white, inset -1px -1px 2px #ccc;
+  padding:5px 0;
+  }
+
+  section {
+  width:45%;
+  background-color:#000;
+  position:relative;
+  height:215px;
+  margin:5px;
+  }
+
+  section img {
+  width:100%;
+  display:block;
+  position:absolute;
+  bottom:0;
+  }
+
+  section p {
+  color:#FF0;
+  background:#000;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:2px 2px 1px #FF0;
+  position:absolute;
+  right:10px;
+  bottom:-6px;
+  z-index:2000;
+  }
+
+  input {
+    background: black;
+    box-shadow: inset 1px 1px 1px white;
+    color: yellow;
+    border: none;
+    padding: 5px;
+    width: 201.5px;
+  }
+
+  section input {
+    color: blue;
+    background: rgb(240, 238, 238);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 1px yellow;
+    position: absolute;
+    right: 10px;
+    bottom: 80px;
+    z-index: 2000;
+  }
+  section label {
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    right: 15px;
+    bottom:130px;
+    z-index: 2000;
+  }
