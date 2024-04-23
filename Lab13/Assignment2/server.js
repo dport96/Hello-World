@@ -26,23 +26,26 @@ app.all('*', function (request, response, next) {
   next();
 });
 
-app.get("/login", function (request, response) {
-  // Give a simple login form
-  str = `
-<body>
-<form action="" method="POST">
-<input type="text" name="username" size="40" placeholder="enter username" ><br />
-<input type="password" name="password" size="40" placeholder="enter password"><br />
-<input type="submit" value="Submit" id="submit">
-</form>
-</body>
-  `;
-  response.send(str);
-});
-
-app.post("/login", function (request, response) {
+app.post("/process_login", function (request, response) {
   // Process login form POST and redirect to logged in page if ok, back to login page if not
+  console.log(request.body);
+  let errors = {};
+  // check if user exists in user_reg_data
+  let email_entered = request.body["email"];
+  let password_entered = request.body["password"];
+  if(email_entered in users_reg_data) {
+    console.log(users_reg_data, password_entered);
+    // check if password matches
+    if(password_entered === users_reg_data[email_entered]) {
+      console.log(`${email_entered} is loggin in`);
+    } else {
+      errors['password'] = `Wrong password!`;
+    }
+  } else {
+    errors['email'] = `${email_entered} not registered`;
+  }
 
+  response.json(errors);
 });
 
 // A micro-service to return the products data currently in memory on the server as
