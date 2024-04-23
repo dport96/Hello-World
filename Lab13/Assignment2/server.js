@@ -48,6 +48,40 @@ app.post("/process_login", function (request, response) {
   response.json(errors);
 });
 
+app.post("/process_registration", function (request, response) {
+  // Process login form POST and redirect to logged in page if ok, back to login page if not
+  console.log(request.body);
+  let errors = {};
+// validate registration data
+
+// is email already registered?
+
+// password correct format
+
+// password and password repeat match
+
+// validate full name
+
+// if errors, send back to registration
+if(Object.keys(errors).length !== 0) {
+  response.redirect('./register.html');
+} else { 
+// data valid, so add new user to users_reg_data
+let new_email = request.body.email.toLowerCase();
+ users_reg_data[new_email] = {};
+ users_reg_data[new_email].username = request.body.username;
+ users_reg_data[new_email].password = 
+// save data to user_data_file
+fs.writeFileSync(user_data_file,JSON.stringify(users_reg_data));
+// reduce inventory 
+// send to invoice
+
+ response.redirect('./invoice.html');
+}
+
+
+});
+
 // A micro-service to return the products data currently in memory on the server as
 // javascript to define the products array
 app.get('/products.json', function (req, res, next) {
